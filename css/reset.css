@@ -1,0 +1,17 @@
+@charset "utf-8";
+* { margin:0; padding:0; box-sizing:border-box; }
+a { text-decoration:none; color:inherit; display:inline-block }
+img { max-width:100%; vertical-align:middle; border:none; }
+ul, ol { list-style:none }    
+table { border-collapse: collapse; width:100%; table-layout: fixed; }
+caption { display:none }
+.cf::before, .cf::after { content:''; display:block; clear:both }
+figure, header, section, footer, nav, article, aside, main { display:block; }
+fieldset { border:none }
+button, input[type=button], input[type=submit] {  background:none; cursor:pointer }
+label, span { display:inline-block }
+h1, h2, h3, h4, h5, h6, th, strong {font-size:100%; font-weight:normal }
+address, em { font-style:normal }
+.blind { position:absolute; width:0; height:0; line-height:0;
+    font-size:0; overflow:hidden; text-indent:-9999px;
+}

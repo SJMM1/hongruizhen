@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍루이젠</title>
+    <script src="./js/prefixfree.min.js"></script>
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+    <link rel="stylesheet" href="./css/hover.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <!--[if lt IE 9]>
+        <script src="./js/html5shiv.js"></script>        
+    <![endif]-->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- 스크롤시 상단 고정 -->
+    <script>
+        $(document).ready(function() {
+            var nav_offset = $( '#nav' ).offset();
+            $( window ).scroll( function() {
+                if ( $( document ).scrollTop() > nav_offset.top ) {
+                    $( '#nav' ).addClass( 'scroll_fix' );
+                }
+                else {
+                    $( '#nav' ).removeClass( 'scroll_fix' );
+                }
+            });
+
+            // var banner_offset = $( '.main_banner' ).offset();
+            // $( window ).scroll( function() {
+            //     if ( $( document ).scrollTop() > banner_offset.top ) {
+            //         $( '.main_banner' ).addClass( 'scroll_none' );
+            //     }
+            //     else {
+            //         $( '.main_banner' ).removeClass( 'scroll_none' );
+            //     }
+            // });
+        });
+
+        $(window).scroll(function () {
+            var rightSec = $('.article_1').offset().top;
+            var rightE = rightSec + $('.article_1').height();
+
+            var leftBannerH = $(".article_1 .main_banner").height();
+            var sectionBottom = rightE - leftBannerH
+
+            var scrollTop = $(window).scrollTop()
+            
+            if (scrollTop >= rightSec && scrollTop <= rightE) {
+                $('.main_banner').addClass('fixed');
+            } else {
+                $('.main_banner').removeClass('fixed');
+            }
+            
+            if( scrollTop >= sectionBottom ) {
+                $('.main_banner').addClass('absolute');
+            } else {
+                $('.main_banner').removeClass('absolute');
+            }
+        });
+    </script>
+</head>
+<body>
+    <!------------ HEADER ------------>
+    <header id="header">
+        <div class="inner">
+            <h1>
+                <a href="#" class="logo">
+                    <img src="./images/logo.png" alt="홈으로">
+                </a>
+            </h1>
+            <div class="start sm_style">
+                <a href="#">창업문의</a>
+            </div>          
+            <div class="member sm_style">
+                <a href="./login.html">LOGIN</a>
+                <a href="./join.html">JOIN</a>
+            </div>
+        </div>
+    </header>
+
+    <!------------ NAV ------------>
+    <nav id="nav">
+        <ul class="depth_1 inner cf">
+            <li>
+                <h2><a href="#">브랜드소개</a></h2>
+                <ul class="depth_2">
+                    <li><a href="#">홍루이젠소개</a></li>
+                    <li><a href="#">브랜드철학</a></li>
+                    <li><a href="#">히스토리</a></li>
+                </ul>
+            </li>
+            <li>
+                <h2><a href="#">브랜드관</a></h2>
+                <ul class="depth_2">
+                    <li><a href="#">브랜드관</a></li>
+                </ul>
+            </li>
+            <li>
+                <h2><a href="#">메뉴</a></h2>
+                <ul class="depth_2">
+                    <li><a href="#">전체</a></li>
+                    <li><a href="#">신메뉴</a></li>
+                    <li><a href="#">소프트샌드위치</a></li>
+                    <li><a href="#">프레시샌드위치</a></li>
+                    <li><a href="#">갓군샌</a></li>
+                    <li><a href="#">디저트</a></li>
+                    <li><a href="#">음료</a></li>
+                </ul>
+            </li>
+            <li>
+                <h2><a href="#">매장안내</a></h2>
+                <ul class="depth_2">
+                    <li><a href="#">매장찾기</a></li>
+                    <li><a href="#">단체주문</a></li>
+                </ul>
+            </li>
+            <li>
+                <h2><a href="#">커뮤니티</a></h2>
+                <ul class="depth_2">
+                    <li><a href="#">홍루이젠소식</a></li>
+                    <li><a href="#">프레스센터</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">고객의소리</a></li>
+                </ul>
+            </li>
+            <li> 
+                <h2><a href="#">쇼핑하기</a></h2>
+                <ul class="depth_2">
+                    <li><a href="#">쇼핑하기</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="section">
+        <!------------ ARTICLE_1 ------------>
+        <article class="article_1 cf">
+            <div class="main_banner">
+                <a href="#"><img src="./images/banner_1.png" alt=""></a>
+                <a href="#"><img src="./images/banner_2.png" alt=""></a>
+                <a href="#"><img src="./images/banner_3.png" alt=""></a>
+                <a href="#"><img src="./images/banner_4.png" alt=""></a>
+            </div>
+            <div class="banner_con">
+                <div class="video_wrap cf">
+                    <div>
+                        <p>오리지널 소프트 샌드위치 홍루이젠</p>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/S82wJ0DGFGI?controls=1&amp;mute=1&amp;autoplay=1&amp;rel=0&amp;loop=1&amp;playlist=S82wJ0DGFGI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              
+                    </div>
+    
+                    <div>
+                        <p>오늘의 샌드위치 베이커리 홍루이젠</p>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VTTkU4SReM8?controls=1&amp;mute=1&amp;autoplay=1&amp;rel=0&amp;loop=1&amp;playlist=VTTkU4SReM8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="new_wrap cf">
+                    <div>
+                        <a href="#">
+                            <img src="./images/new_product/peach_ice.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./images/new_product/grape_ice.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./images/new_product/strawberry_ice.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./images/new_product/cnc_sand.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./images/new_product/green_latte.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./images/new_product/green_sand.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./images/new_product/nougat_cracker.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./images/new_product/nougat_candy.png" alt="">
+                        </a>
+                    </div>  
+                </div>
+            </div>
+        </article>
+        <!------------ ARTICLE_2 ------------>
+        <!-- <article class="article_2">
+            <div>
+                <h3 class="title"><span>PRODUCT</span></h3>
+                <div class="product">   
+                    <a href="#" class="pre">
+                        <img src="./images/pre.png" alt="이전으로">
+                    </a>                      
+                    <a href="#" class="menu">
+                        <img src="./images/peach_ice.png" alt="복숭아 아이스티">
+                    </a>
+                    <a href="#" class="menu">
+                        <img src="./images/grape_ice.png" alt="청포도 아이스티">
+                    </a>  
+                    <a href="#" class="next">
+                        <img src="./images/next.png" alt="다음으로">
+                    </a>                              
+                </div>
+                <div class="product_btn">
+                    <a href="">All Product</a>
+                </div>
+            </div>
+        </article> -->
+        <!------------ ARTICLE_3 ------------>
+        <article class="article_3">
+            <div>
+                <h3 class="title"><span>EVENT</span></h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt minus soluta sint fuga veritatis reprehenderit voluptatibus autem eius quisquam, provident dolore, beatae officia eveniet accusamus suscipit iste commodi. Quo, aperiam!
+                Temporibus id nobis reiciendis? Inventore, nisi, nesciunt magni porro accusantium et eligendi eveniet itaque sint sed ut maxime, odio dolores enim quia voluptatum rerum laborum adipisci perspiciatis neque exercitationem culpa?
+                Sequi pariatur sit incidunt quos, numquam eius ex quasi aliquam, eveniet quibusdam asperiores doloremque aspernatur ipsam ad nemo, cupiditate magni omnis excepturi? Eligendi voluptas odit animi soluta laudantium, accusamus voluptatum.
+                Aperiam, deserunt possimus eaque eligendi vitae, vel nisi quo odit recusandae similique sed veniam repellat. Laboriosam incidunt itaque minus reprehenderit deserunt eveniet culpa quis fugit, perferendis cupiditate, tenetur soluta id.
+                Deleniti suscipit temporibus quas facere animi reiciendis ipsa aliquam provident ipsam obcaecati cupiditate ut, blanditiis fugit similique, architecto inventore omnis accusantium ex debitis excepturi tempora repudiandae nihil harum. Quibusdam, voluptates.
+            </div>
+        </article>
+        <!------------ ARTICLE_4 ------------>
+        <!-- <article class="article_4">
+            <div>
+                <h3 class="title"><span>NEWS</span></h3>
+            </div>
+        </article> -->
+        <!------------ ARTICLE_5 ------------>
+        <!-- <article class="article_5">
+            <div>
+                <h3 class="title"><span>VIDEO</span></h3>
+            </div>
+        </article> -->
+        <!------------ ARTICLE_6 ------------>
+        <!-- <article class="article_6">
+            <div>
+                <h3 class="title"><span>FOLLOW US</span></h3>
+            </div>
+        </article> -->
+    </section>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
