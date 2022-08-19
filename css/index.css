@@ -279,38 +279,3 @@ body{
         margin: 5% 10%;
     }
 }
-
-/* ---------- ARTICLE_2 (메뉴) ---------- */
-/* .article_2 {
-    float: left;
-    background: #fff5c6; 
-}
-.article_2 .product { 
-    position: relative;
-    text-align: center; 
-}
-.article_2 .product .menu {
-    width: 45%;
-    padding: 1%;
-}
-.article_2 .product .pre,
-.article_2 .product .next {
-    position: absolute;
-    width: 3%;
-    top: 50%;  
-    transform: translateY(-50%);
-}
-.article_2 .pre { left: 0; }
-.article_2 .next { right: 0; } */
-
-/* ---------- ARTICLE_3 (이벤트) ---------- */
-/* .article_3 > div { background: #ffdcd1; } */
-
-/* ---------- ARTICLE_4 (뉴스) ---------- */
-/* .article_4 > div { background: #def1ee; } */
-
-/* ---------- ARTICLE_5 (비디오) ---------- */
-/* .article_5 > div { background: #ffdcd1; } */
-
-/* ---------- ARTICLE_6 (SNS) ---------- */
-/* .article_6 > div { background: #fff5c6; } */
