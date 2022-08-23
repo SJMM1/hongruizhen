@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>홍루이젠</title>
     <script src="./js/prefixfree.min.js"></script>
+    <script src="./js/circletype.js"></script>
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
     <link rel="stylesheet" href="./css/hover.css">
@@ -17,9 +18,9 @@
     <![endif]-->
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <!-- 스크롤시 상단 고정 -->
     <script>
         $(document).ready(function() {
+            // 스크롤 시 상단 고정
             var nav_offset = $( '#nav' ).offset();
             $( window ).scroll( function() {
                 if ( $( document ).scrollTop() > nav_offset.top ) {
@@ -29,26 +30,41 @@
                     $( '#nav' ).removeClass( 'scroll_fix' );
                 }
             });
+            
+            // 네비게이션 펼침 효과
+            $('.depth_1 > li').mouseenter(function(){
+                $(this).children('.depth_2').stop().slideDown();
+            })
+            $('.depth_1 > li').mouseleave(function(){
+                $(this).children('.depth_2').stop().slideUp(0);
+            })
 
-            // var banner_offset = $( '.main_banner' ).offset();
-            // $( window ).scroll( function() {
-            //     if ( $( document ).scrollTop() > banner_offset.top ) {
-            //         $( '.main_banner' ).addClass( 'scroll_none' );
-            //     }
-            //     else {
-            //         $( '.main_banner' ).removeClass( 'scroll_none' );
-            //     }
-            // });
-
-            $(".product").mouseover(function() {
-                $(this).attr("src", $(this).attr("src").replace("_no","_back"));
+            // 호버 시 신메뉴 이미지 변경
+            $('.product').mouseover(function() {
+                $(this).attr('src', $(this).attr('src').replace('_no','_back'));
+            });
+            $('.product').mouseout(function() {
+                $(this).attr('src', $(this).attr('src').replace('_back', '_no'));
             });
 
-            $(".product").mouseout(function() {
-                $(this).attr("src", $(this).attr("src").replace("_back", "_no"));
-            });
+            // 신메뉴 곡선 텍스트
+            var circles = document.getElementsByClassName("new_name");           
+            new CircleType(circles.item(0)).radius(280);
+            new CircleType(circles.item(1)).radius(310);
+            new CircleType(circles.item(2)).radius(190);
+            new CircleType(circles.item(3)).radius(190);
+            new CircleType(circles.item(4)).radius(220);
+            new CircleType(circles.item(5)).radius(220);
+            new CircleType(circles.item(6)).radius(160);
+            new CircleType(circles.item(7)).radius(130);
+
+            // for (var i = 0; i < circles.length; i++) {
+                // var circleType = new CircleType(circles.item(i));
+                // circleType.radius(circleType.element.offsetWidth / 2);
+            // }
         });
 
+        // 좌측 배너 고정
         $(window).scroll(function () {
             var rightSec = $('.article_1').offset().top;
             var rightE = rightSec + $('.article_1').height();
@@ -170,45 +186,57 @@
                     <h3 class="title">
                         <img src="./images/new.png"> PRODUCT
                     </h3>
+                    <div>
+                        <a href="#" class="all">All Product</a>
+                    </div>
                     <a href="#">
-                        <strong>복숭아 아이스티</strong>
-                        <img class="product" src="./images/new_product/peach_ice_no.png" alt="">              
-                    </a>
-                    <a href="#">
-                        <strong>청포도 아이스티</strong>
-                        <img class="product" src="./images/new_product/grape_ice_no.png" alt="">                      
-                    </a>
-                    <a href="#">
-                        <strong>딸기 아이스티</strong>
-                        <img class="product" src="./images/new_product/strawberry_ice_no.png" alt="">      
-                    </a>
-                    <a href="#">
-                        <strong>쿠키앤크림 샌드위치</strong>
+                        <strong class="new_name">쿠키앤크림 샌드위치</strong>
                         <img class="product" src="./images/new_product/cnc_sand_no.png" alt="">       
                     </a>
                     <a href="#">
-                        <strong>제주 녹차라떼</strong>
+                        <strong class="new_name">제주녹차크림 샌드위치</strong>
+                        <img class="product" src="./images/new_product/green_sand_no.png" alt="">
+                    </a> 
+                    <a href="#">
+                        <strong class="new_name">제주 녹차라떼</strong>
                         <img class="product" src="./images/new_product/green_latte_no.png" alt="">       
                     </a>
                     <a href="#">
-                        <strong>제주녹차크림 샌드위치</strong>
-                        <img class="product" src="./images/new_product/green_sand_no.png" alt="">
+                        <strong class="new_name">딸기 아이스티</strong>
+                        <img class="product" src="./images/new_product/strawberry_ice_no.png" alt="">      
+                    </a>               
+                    <a href="#">
+                        <strong class="new_name" id="demo4">복숭아 아이스티</strong>
+                        <img class="product" src="./images/new_product/peach_ice_no.png" alt="">              
                     </a>
                     <a href="#">
-                        <strong>누가 크래커</strong>
+                        <strong class="new_name">청포도 아이스티</strong>
+                        <img class="product" src="./images/new_product/grape_ice_no.png" alt="">                      
+                    </a>                            
+                    <a href="#">
+                        <strong class="new_name">누가 크래커</strong>
                         <img class="product" src="./images/new_product/nougat_cracker_no.png" alt="">
                     </a>
                     <a href="#">
-                        <strong>누가 캔디</strong>
+                        <strong class="new_name">누가 캔디</strong>
                         <img class="product" src="./images/new_product/nougat_candy_no.png" alt="">
                     </a>
                 </div>
             </div>
         </article>
         <!------------ ARTICLE_2 ------------>
-        <article class="article_2">
-            <div>
+        <article class="article_2 inner">
+            <div class="cf">
                 <h3 class="title"><span>EVENT</span></h3>
+                <a href="#">
+                    <img class="event" src="./images/event_1.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img class="event" src="./images/event_2.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img class="event" src="./images/event_3.jpg" alt="">
+                </a>
             </div>
         </article>
         <!------------ ARTICLE_3 ------------>
