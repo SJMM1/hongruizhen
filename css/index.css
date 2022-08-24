@@ -24,12 +24,9 @@ body{
     position: fixed !important;  
     top: -10%;
 }
-@media screen and (max-width:1250px) { 
-    .fixed { top: 0; } 
-}
 .absolute {
     position: absolute !important;
-    top: auto;
+    top: auto !important;
     left: 0;
     bottom: 0;
     right: 0;
@@ -48,13 +45,14 @@ body{
 
 /* 로고 */
 #header h1 { text-align: center; }
+#header .m_logo { display: none; }
 
 /* 공통 스타일 */
-#header .sm_style {
+#header .header_style {
     position: absolute;
     bottom: 0;
 }
-#header .sm_style a { padding: 10px 30px; }
+#header .header_style a { padding: 10px 30px; }
 
 /* 창업문의 */
 #header .start { left: 5%; }
@@ -80,13 +78,14 @@ body{
     transform: translateY(-50%);
     margin-right: -3px;
 }
+#header .open_nav { display: none; }
 
 /* ---------- NAV ---------- */
 #nav {
     position: absolute;
     width: 100%;
     height: 63px;
-    z-index: 1;  
+    z-index: 3;  
     background: rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid #3B2120;
 }
@@ -113,15 +112,13 @@ body{
     left: 0;
     background: url(../images/ham_ring.png) no-repeat center top;
     width: 100%;
-    height: 0;
+    height: 42px;
 }
 #nav .depth_2 { 
     display: none;
     border: 1px solid #3B2120;
     padding: 24px 0;
-    /* line-height: 2; */
     margin-top: 10px;
-    transition: all 1s;
     background: #fff;
     font-weight: bold;
     font-size: 20px;
@@ -133,7 +130,7 @@ body{
     background: #3B2120;
     color: #fff;
 }
-#nav .depth_1 > li:hover > .depth_2::before { height: 42px; }
+/* #nav .depth_1 > li:hover > .depth_2::before { height: 42px; } */
 /* #nav .depth_1 > li:hover .depth_2 { display: block; } */
 #nav .depth_2 a:hover { border-bottom: 1px dotted #3B2120; } 
 
@@ -175,8 +172,8 @@ body{
 }
 .article_1 .main_banner a { display: none; }
 .article_1 .main_banner a:first-child { display: block; }
-@media screen and (max-width:1250px) {
-    .article_1 .main_banner { max-width: 650px; }
+.article_1 .main_banner_2 {
+    display: none;
 }
 
 /* 컨텐츠 공통 */
@@ -186,13 +183,10 @@ body{
     text-align: center;
     margin: 0 auto;
 }
-@media screen and (max-width:1250px) {
-    .article_1 .banner_con { width: calc(100% - 650px); }
-}
 
 /* 비디오 */
 .article_1 .video_wrap { 
-    padding: 30px;
+    padding: 20px;
     background-color: #fff5c6;
 }
 .article_1 .video_wrap div {
@@ -200,7 +194,6 @@ body{
     width: 49.5%;
     position: relative;
 	padding-top: 27.8%;
-    background-color: #fff5c6;
 }
 .article_1 .video_wrap div:last-child { margin: 100px 0 0 1%; }
 .article_1 .video_wrap iframe {
@@ -229,24 +222,6 @@ body{
     color: #CE403D;
     animation: flash 3s infinite 5s;
 }
-@media screen and (max-width:1700px) {
-    .article_1 .video_wrap div {
-        float: none;
-        width: 100%;
-        padding-top: 56.25%;
-    }
-    .article_1 .video_wrap div:last-child { margin: 2% 0 0 0; }
-    .article_1 .video_wrap iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    .article_1 .video_wrap div p {
-        display: none;
-    }
-}
 
 /* 신메뉴 */
 .article_1 .new_wrap { 
@@ -261,28 +236,24 @@ body{
     padding: 13px 20px;
     border: 1px solid black;
     position: relative;
-    /* background-color: rgba(0, 0, 0, 0); */
-    background-color: pink;
-    z-index: 999;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
 }
-
 .article_1 .new_wrap .all::after {
     content: '';
     background-color: #ffe54c;
     width: 100%;
     height: 100%;
-    z-index: -999;
+    z-index: -1;
     position: absolute;
     top: 7px;
     left: 7px;
     transition: 0.2s;
 }
-
 .article_1 .new_wrap .all:hover::after {
     top: 0px;
     left: 0px;
 }
-
 .article_1 .new_wrap > a { 
     float: left;
     width: 40%;
@@ -295,17 +266,37 @@ body{
     font-size: 25px;
     font-weight: bold;
 }
-@media screen and (max-width:1400px) {
-    .article_1 .new_wrap > a { 
-        width: 80%;
-        margin: 5% 10%;
-    }
+.article_1 .new_wrap .new_name > div {
+    height: 2em !important;
 }
 
 /* ---------- ARTICLE_2 ---------- */
 .article_2 a {
     float: left;
     width: 29.3333%;
-    margin: 0 2%;
+    margin: 2%;
     border: 1px solid black;
+}
+
+/* ---------- ARTICLE_3 ---------- */
+
+
+/* ---------- ARTICLE_4 ---------- */
+.article_4 .follow_small {
+    float: left;
+    width: 23%;
+    margin: 2%;
+}
+.article_4 .follow_small a {
+    border: 1px solid black;
+}
+.article_4 .follow_small a:first-child {
+    margin-bottom: 20px;
+}
+.article_4 .follow_big {
+    float: left;
+    width: 42%;
+    margin: 5% 2%;
+    border: 1px solid black;
+    vertical-align: middle;
 }
