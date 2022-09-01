@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Varela+Round&display=swap');
+/* 
+font-family: 'IBM Plex Sans KR', sans-serif;
+font-family: 'Varela Round', sans-serif;
+*/
+
+/* ---------- 공통 ---------- */
+body{ 
+    word-break: keep-all;
+    font-size: 18px;  
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+.inner { 
+    max-width: 1400px;
+    margin: 0 auto; 
+}
+.scroll_fix {
+    position: fixed !important;
+    top: 0;
+}
+.fixed {
+    position: fixed !important;  
+    top: -10%;
+}
+.absolute {
+    position: absolute !important;
+    top: auto !important;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: auto !important;
+}
+video { max-width: 100%; }
+
+/* ---------- HEADER ---------- */
+#header {
+    padding: 30px 0;
+    background: #3B2120;
+}
+#header .inner { 
+    position: relative;
+    color: #fff; 
+}
+
+/* 로고 */
+#header h1 { text-align: center; }
+#header .m_logo { display: none; }
+
+/* 공통 스타일 */
+#header .header_style {
+    position: absolute;
+    bottom: 0;
+}
+#header .header_style a { padding: 10px 30px; }
+
+/* 창업문의 */
+#header .start { left: 5%; }
+#header .start a {
+    border: 2px solid #fff;
+    border-radius: 24px;
+}
+
+/* 로그인&회원가입 */
+#header .member {
+    right: 5%;
+    font-weight: bold;
+}
+#header .member a { position: relative; }
+#header .member a:first-child::after {
+    content:'';
+    width: 1px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: -3px;
+}
+#header .open_nav { display: none; }
+
+/* ---------- NAV ---------- */
+#nav {
+    position: absolute;
+    width: 100%;
+    height: 63px;
+    z-index: 3;  
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid #3B2120;
+}
+
+/* 대분류 */
+#nav .depth_1 > li { 
+    float: left;
+    width: 16.6666%;
+    text-align: center;
+    color: #3B2120; 
+    position: relative;
+}
+/* #nav .depth_1 h2 { position: relative; } */
+#nav .depth_1 h2 > a { 
+    padding: 18px 50px;
+    font-weight: bold;
+}
+
+/* 소분류 */
+#nav .depth_2::before {
+    content: '';
+    position: absolute;
+    top: 56px;
+    left: 0;
+    background: url(../images/ham_ring.png) no-repeat center top;
+    width: 100%;
+    height: 42px;
+}
+#nav .depth_2 { 
+    display: none;
+    border: 1px solid #3B2120;
+    padding: 24px 0;
+    margin-top: 10px;
+    background: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+#nav .depth_2 a { padding: 8px 20px; }
+
+/* HOVER */
+#nav .depth_1 > li:hover > h2 {
+    background: #3B2120;
+    color: #fff;
+}
+/* #nav .depth_1 > li:hover > .depth_2::before { height: 42px; } */
+/* #nav .depth_1 > li:hover .depth_2 { display: block; } */
+#nav .depth_2 a:hover { border-bottom: 1px dotted #3B2120; } 
+
+/* ---------- SECTION 공통---------- */
+#section { margin-top: 80px; }
+
+/* 제목 */
+#section .title {
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    margin: 100px 0 50px;
+    color: #ff0303;
+}
+
+
+/* #section .title span { position: relative; }
+#section .title span::before,
+#section .title span::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background: #CE403D;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#section .title span::before { left: -80px; }
+#section .title span::after { right: -80px; } */
+
+
+
+/* ---------- FOOTER ---------- */
+#footer {
+    padding-top: 30px;
+    background: #3B2120;
+    margin-top: 100px;
+    font-size: 15px;
+}
+#footer .inner { 
+    color: rgba(236, 236, 236, 0.7);
+    position: relative;
+}
+#footer .info { margin-left: 10%; }
+#footer .sns {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 7%;
+    width: 20%;
+}
+#footer .sns a { margin-right: 7%; }
+#footer .copyright {
+    padding: 15px 0;
+    background: #2D1817;
+    font-size: 14px;
+    color: rgba(236, 236, 236, 0.7);
+    text-align: center;
+    margin-top: 30px;
+}
