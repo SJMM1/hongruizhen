@@ -90,6 +90,7 @@ video { max-width: 100%; }
     background: rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid #3B2120;
 }
+#nav.on { display: block; }
 
 /* 대분류 */
 #nav .depth_1 > li { 
@@ -99,11 +100,16 @@ video { max-width: 100%; }
     color: #3B2120; 
     position: relative;
 }
+#nav .depth_1 h2.on { 
+    background: #3B2120;
+    color: #fff; 
+}
 /* #nav .depth_1 h2 { position: relative; } */
 #nav .depth_1 h2 > a { 
     padding: 18px 50px;
     font-weight: bold;
 }
+
 
 /* 소분류 */
 #nav .depth_2::before {
@@ -124,6 +130,7 @@ video { max-width: 100%; }
     font-weight: bold;
     font-size: 20px;
 }
+#nav .depth_2 li { height: 50px; }
 #nav .depth_2 a { padding: 8px 20px; }
 
 /* HOVER */
