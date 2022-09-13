@@ -1,0 +1,74 @@
+.join_img {
+    text-align: center;
+}
+.join_img img { 
+    max-width: 400px; 
+    margin: 50px 0 40px;
+}
+
+.join_wrap { 
+    max-width: 700px;
+    margin: 0 auto;
+}
+.join_wrap label,
+.join_wrap .input_content { 
+    display: block;
+    margin-left: 10px;
+}
+
+.join_wrap label { font-weight: bold; }
+.join_wrap label span {
+    color: #f52334;
+    transform: translateY(4px);
+    margin-right: 5px;
+}
+.join_wrap .input_content {
+    width: 95%;
+    margin: 10px auto 20px;
+}
+.join_wrap input,
+.join_wrap select { 
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.join_wrap #email {
+    width: 49%;
+}
+.join_wrap #emailDomain {
+    width: 49%;
+    float: right;
+}
+
+.join_wrap #zipcode {
+    width: 80%;
+}
+.join_wrap .zipcode_btn {
+    width: 18%;
+    float: right;
+    padding: 10px;
+}
+.join_wrap #address {
+    margin: 5px 0;
+}
+.join_wrap #birthYear { width: 32%; }
+.join_wrap #birthMonth { width: 32%; }
+.join_wrap #birthDay { width: 32%; }
+
+.join_wrap .join_btn { text-align: center; }
+.join_wrap .join_btn > button {
+    padding: 15px 60px;
+    border-radius: 42px;
+    margin: 30px 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+}
+.join_wrap .prev_btn {
+    background: #3c2121;
+}
+.join_wrap .ok_btn {
+    background: #f52334;
+}

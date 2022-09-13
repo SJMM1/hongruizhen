@@ -190,6 +190,8 @@ font-family: 'Varela Round', sans-serif;
 .article_2 .slick-arrow.rightarr { right: -50px; }
 
 .article_2 .slick-disabled { cursor: default; }
+.article_2 .leftarr.slick-disabled { content: url('../images/dis_pre.png'); }
+.article_2 .rightarr.slick-disabled { content: url('../images/dis_next.png'); }
 
 /* ---------- ARTICLE_3 ---------- */
 .article_3 .news_wrap { 

@@ -30,9 +30,6 @@
 }
 
 @media screen and (max-width:1265px) { 
-    /* 공통 */
-    .fixed { top: 0; } 
-
     .article_1 .main_banner { max-width: 650px; }
     .article_1 .banner_con { width: calc(100% - 650px); }
 }
@@ -50,69 +47,6 @@
 }
 
 @media screen and (max-width:1024px) {
-    #header { 
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 3;
-    }
-
-    /* 로고 */
-    #header h1 { text-align: left; }
-    #header .logo { display: none; }
-    #header .m_logo { 
-        display: inline-block; 
-        margin-left: 25px;
-    }
-    #header .m_logo img { width: 200px; }  
-    
-    /* 창업문의 */
-    #header .start { 
-        left: inherit;
-        bottom: inherit;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        margin-right: 100px;
-    }
-
-    /* 로그인&회원가입 */
-    #header .member { display: none; }
-    
-    /* 메뉴 열고 닫기 */
-    #header .open_nav { 
-        display: block;
-        position: absolute;
-        right: 5%;
-        top: 50%;
-        transform: translateY(-50%);
-    }  
-    #header .open_nav i { font-size: 30px; } 
-
-    #nav { 
-        display: none;
-        position: fixed;
-        height: inherit;
-        top: 120px;
-        bottom: 0;
-        z-index: 2;  
-        background: rgb(255, 255, 255);
-        overflow-y: auto;
-        border: none;
-    }
-    #nav .depth_1 > li { 
-        width: 100%;
-        text-align: center;
-        color: #3B2120; 
-        position: relative;
-    }
-
-    #nav .depth_2::before {
-        display: none;
-    }
-
-    #section { margin-top: 120px; }
-
     .article_1 .main_banner { display: none; }
     .article_1 .main_banner_2 { display: block; }
     /* .article_1 .main_banner_2 a:not(:first-child){ display: none; } */
@@ -150,28 +84,9 @@
     .article_2 a { margin: 0 10px; }
     .article_2 a::before { display: none; }
     .article_2 a span { display: none; }
-
-    #footer .inner { 
-        text-align: center;
-    }
-    #footer .info { margin-left: 0; }
-    #footer .sns {
-        position: static;
-        top: 0;
-        transform: translateY(0);
-        right: 0;
-        width: 100%;
-        margin-top: 3%;
-    }
-    #footer .sns a { margin: 0 1.5% ; }
 }
 
-@media screen and (max-width:768px) {
-    #header .m_logo img { width: 160px; }
-    
-    #nav { top: 108px; }
-    
-    #section { margin-top: 108px; }
+@media screen and (max-width:768px) { 
     #section .title { font-size: 45px !important; }
     .article_1 .video_wrap div {
         float: none;
@@ -214,7 +129,7 @@
     .article_1 .new_wrap .new_img { top: -160px; }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:500px) { 
     .article_1 .new_wrap { 
         margin-top: 20px;
     }

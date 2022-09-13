@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+@media screen and (max-width:1265px) { 
+    .fixed { top: 0; } 
+}
+
+@media screen and (max-width:1024px) {
+    #header { 
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 3;
+    }
+
+    /* 로고 */
+    #header h1 { text-align: left; }
+    #header .logo { display: none; }
+    #header .m_logo { 
+        display: inline-block; 
+        margin-left: 25px;
+    }
+    #header .m_logo img { width: 200px; }  
+    
+    #header .header_style { display: none; }
+    
+    /* 메뉴 열고 닫기 */
+    #header .open_nav { 
+        display: block;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+    }  
+    #header .open_nav i { font-size: 30px; } 
+
+    #nav { 
+        display: none;
+        position: fixed;
+        height: inherit;
+        top: 120px;
+        bottom: 0;
+        z-index: 2;  
+        background: rgb(255, 255, 255);
+        overflow-y: auto;
+        border: none;
+        background-color: #fff5d9; 
+    }
+
+    /* 로그인&회원가입 */
+    #nav > div { 
+        display: block;
+        background-color: #fff; 
+        text-align: center;
+        padding: 20px 0;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    #nav .member { margin-top: 10px; }
+    #nav .member a { 
+        padding: 10px 0; 
+        width: 145px;
+        border: 2px solid #f52334;
+        border-radius: 26px;
+        margin: 5px;
+    }
+    #nav .member a:first-child { 
+        background: #f52334;
+        color: #fff;
+    }  
+
+    #nav .depth_1 > li { 
+        width: 100%;
+        text-align: center;
+        color: #3B2120; 
+        position: relative;
+        font-size: 23px;
+    }
+    #nav .depth_1 > li:hover > h2,
+    #nav .depth_1 h2.on {
+        background: #ffe6a0;
+        color: #3B2120;
+    }
+
+    #nav .depth_2::before { display: none; }
+
+    #section { margin-top: 120px; }
+
+    #footer .inner { 
+        text-align: center;
+    }
+    #footer .info { margin-left: 0; }
+    #footer .sns {
+        position: static;
+        top: 0;
+        transform: translateY(0);
+        right: 0;
+        width: 100%;
+        margin-top: 3%;
+    }
+    #footer .sns a { margin: 0 1.5% ; }
+}
+
+@media screen and (max-width:768px) {
+    #header .m_logo img { width: 160px; }
+    
+    #nav { top: 108px; }
+
+    #section { margin-top: 108px; }
+}

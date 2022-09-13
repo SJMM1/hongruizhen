@@ -11,6 +11,7 @@ body{
     word-break: keep-all;
     font-size: 18px;  
     font-family: 'IBM Plex Sans KR', sans-serif;
+    overflow-x: hidden;
 }
 .inner { 
     max-width: 1400px;
@@ -79,6 +80,7 @@ video { max-width: 100%; }
     transform: translateY(-50%);
     margin-right: -3px;
 }
+
 #header .open_nav { display: none; }
 
 /* ---------- NAV ---------- */
@@ -91,6 +93,8 @@ video { max-width: 100%; }
     border-bottom: 1px solid #3B2120;
 }
 #nav.on { display: block; }
+
+#nav > div { display: none; }
 
 /* 대분류 */
 #nav .depth_1 > li { 
@@ -152,7 +156,7 @@ video { max-width: 100%; }
     font-size: 60px;
     font-weight: bold;
     margin: 100px 0 50px;
-    color: #ff0303;
+    color: #f52334;
 }
 
 
@@ -170,7 +174,23 @@ video { max-width: 100%; }
 #section .title span::before { left: -80px; }
 #section .title span::after { right: -80px; } */
 
-
+/* ---------- 퀵메뉴 ---------- */
+.quickmenu {
+    position: absolute;
+    bottom: 30px;
+    right: 25px;
+    width: 49px;
+}
+.quickmenu li:first-child {
+    background: #ff0303;
+    border-radius: 50%;
+    height: 49px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 49px;
+}
 
 /* ---------- FOOTER ---------- */
 #footer {
