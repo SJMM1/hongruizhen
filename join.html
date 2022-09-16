@@ -18,12 +18,12 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/rwdcommon.css">
     <link rel="stylesheet" href="./css/join.css">
-    <link rel="stylesheet" href="./css/rwdjoin.css">
     <!--[if lt IE 9]>
         <script src="./js/html5shiv.js"></script>        
     <![endif]-->
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
     <!------------ HEADER ------------>
@@ -80,7 +80,7 @@
             <li>
                 <h2><a href="#">메뉴</a></h2>
                 <ul class="depth_2">
-                    <li><a href="#">전체</a></li>
+                    <li><a href="./goods.html">전체</a></li>
                     <li><a href="#">신메뉴</a></li>
                     <li><a href="#">소프트샌드위치</a></li>
                     <li><a href="#">프레시샌드위치</a></li>
@@ -119,7 +119,7 @@
             <img src="./images/join.png" alt="">
         </div>
         <div class="join_wrap">
-            <form>
+            <form onsubmit="return false;">
                 <label for="memId"><span>*</span>아이디</label>
                 <div class="input_content">
                     <input type="text" name="memId" id="memId">
@@ -144,20 +144,30 @@
                 <div class="input_content cf">
                     <input type="text" name="email" id="email">
                     <select name="emailDomain" id="emailDomain">
-    					<option value="self">직접입력</option>
-    					<option value="naver.com">naver.com</option>
-    					<option value="hanmail.net">hanmail.net</option>
-    					<option value="daum.net">daum.net</option>
-    					<option value="nate.com">nate.com</option>
-    					<option value="hotmail.com">hotmail.com</option>
-    					<option value="gmail.com">gmail.com</option>
-    					<option value="icloud.com">icloud.com</option>
-    				</select>
+                        <option value="self">직접입력</option>
+                        <option value="naver.com">@naver.com</option>
+                        <option value="hanmail.net">@hanmail.net</option>
+                        <option value="daum.net">@daum.net</option>
+                        <option value="nate.com">@nate.com</option>
+                        <option value="hotmail.com">@hotmail.com</option>
+                        <option value="gmail.com">@gmail.com</option>
+                        <option value="icloud.com">@icloud.com</option>
+                    </select>
+                    <div class="agree">
+                        <input type="checkbox" id="maillingFl" class="ignore" name="maillingFl" value="y">
+                        <label for="maillingFl"></label>
+                        <label for="maillingFl">정보/이벤트 메일 수신에 동의합니다.</label>
+                    </div>
                 </div>
                 
                 <label for="cellPhone">휴대폰번호</label>
                 <div class="input_content">
-                    <input type="text" name="cellPhone" id="cellPhone" maxlength="11" placeholder="- 없이 숫자만 입력하세요">                 
+                    <input type="text" name="cellPhone" id="cellPhone" maxlength="11" placeholder="- 없이 숫자만 입력하세요">
+                    <div class="agree">
+                        <input type="checkbox" id="smsFl" class="ignore" name="smsFl" value="y">
+                        <label for="smsFl"></label>
+                        <label for="smsFl">정보/이벤트 SMS 수신에 동의합니다.</label>
+                    </div>
                 </div>
 
                 <label for="phone">전화번호</label>
@@ -168,25 +178,38 @@
                 <label for="zipcode">주소</label>
                 <div class="input_content cf">
                     <input type="text" name="zipcode" id="zipcode" readonly="readonly">
-                    <button type="button" class="zipcode_btn">우편번호</button>
+                    <button type="button" class="zipcode_btn" onclick="Postcode()">우편번호</button>
                     <input type="text" name="address" id="address" readonly="readonly">
                     <input type="text" name="addressSub" id="addressSub">
                 </div>
                 
                 <label for="birthYear"><span>*</span>생일</label>
                 <div class="input_content">
-                    <select name="birthYear" id="birthYear"></select>
-                    <select name="birthMonth" id="birthMonth"></select>
-                    <select name="birthDay" id="birthDay"></select>
+                    <select name="birthYear" id="birthYear">
+                        <option value="0">년</option>
+                    </select>
+                    <select name="birthMonth" id="birthMonth">
+                        <option value="0">월</option>
+                    </select>
+                    <select name="birthDay" id="birthDay">
+                        <option value="0">일</option>
+                    </select>
                 </div>
                 
                 <div class="join_btn">
-                    <button type="button" class="prev_btn">이전</button>
-                    <button type="submit" class="ok_btn">확인</button>
+                    <button type="button" class="prev_btn" onclick="history.back()">이전</button>
+                    <button type="submit" class="ok_btn" onclick="join()">확인</button>
                 </div>
             </form>
         </div>
     </section>
+
+    <div class="quickmenu">
+        <ul>
+            <li><a href="#">창업</a></li>
+            <li><a href="#"><img src="./images/btn_scroll_top.png" alt="상단이동버튼"></a></li>
+        </ul>
+    </div>
     
     <footer id="footer">
         <div class="inner">
@@ -206,6 +229,7 @@
         </div>
     </footer>
 
-    <script src="./js/index.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/join.js"></script>
 </body>
 </html>

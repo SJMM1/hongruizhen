@@ -1,0 +1,58 @@
+@media screen and (max-width:1024px) {
+    form { top: 18%; }
+}
+
+@media screen and (max-width:896px) {
+    form h2 { font-size: 35px; }
+
+    .input-div > div { height: 35px; }
+
+    .input-div > div > h5,
+    .input-div > div > input { font-size: 16px; }
+
+    .input-div.focus > div > h5,
+    form a { font-size: 14px; }
+
+    .btn {
+        height: 40px;
+        font-size: 16px;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    form { top: 20%; }
+    form h2 { display: none; }
+}
+
+@media screen and (max-width:624px) {
+    form .input-div { margin: 15px 0; }
+    
+    .input-div > div { height: 30px; }
+
+    .input-div > div > h5,
+    .input-div > div > input { font-size: 15px; }
+    
+    .input-div.focus > div > h5,
+    form a { font-size: 12px; }
+    
+    .btn {
+        height: 35px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    form {
+        top: 18%;
+        max-width: 200px;
+    }
+
+    .input-div > div { height: 20px; }
+
+    .input-div > div > h5,
+    .input-div > div > input,
+    .btn { font-size: 14px; }
+    
+    .input-div.focus > div > h5 { display: none; }
+}

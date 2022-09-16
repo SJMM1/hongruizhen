@@ -1,0 +1,47 @@
+.goods_img {
+    margin:0 auto; 
+    max-width:1920px; 
+    height:0; 
+    padding-bottom:calc(400/1920*100%); 
+    text-align:center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply;
+}
+.article_1 .goods_img { background-image:url('../images/allproduct.jpg'); }
+.article_2 .goods_img { background-image:url('../images/new.jpg'); }
+.article_3 .goods_img { background-image:url('../images/soft.jpg'); }
+.article_4 .goods_img { background-image:url('../images/baked.jpg'); }
+.article_5 .goods_img { background-image:url('../images/fresh.jpg'); }
+.article_6 .goods_img { background-image:url('../images/dessert.jpg'); }
+.article_7 .goods_img { background-image:url('../images/drink.jpg'); }
+
+.goods_cate { 
+    text-align: center;
+    transform: translateY(-100%);
+}
+.goods_cate ul {
+    display: flex;
+}
+.goods_cate li {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-bottom: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    flex-basis: auto;
+    flex: 1;
+    padding: 20px 0;
+    font-weight: bold;
+}
+
+.goods_cate li:hover {
+    border: 2px solid #fff;
+    border-bottom: none;
+    color: #fff;
+}
+.goods_cate li.on {
+    background: #fff;
+    color: #000;
+} 

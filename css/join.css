@@ -33,31 +33,68 @@
     font-size: 16px;
 }
 
-.join_wrap #email {
+.input_content span {
+    font-size: 15px;
+    margin-left: 5px;
+    color: #f52334;
+}
+
+#email {
     width: 49%;
 }
-.join_wrap #emailDomain {
+#emailDomain {
     width: 49%;
     float: right;
 }
 
-.join_wrap #zipcode {
+.agree { text-align: left; }
+.agree label { 
+    display: inline-block;
+    font-weight: 400;
+    font-size: 15px;
+    margin-left: 0;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+input[type="checkbox"] + label{
+    background: url('../images/check_off.png') no-repeat;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    vertical-align: sub;
+}
+input[type="checkbox"]:checked + label{
+    background: url('../images/check_on.png') no-repeat;
+    background-size: 20px;
+}
+
+select {  
+    background: url('../images/select.png') no-repeat 95% 50%; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;appearance: none;
+}
+select::-ms-expand { display: none; }
+
+#zipcode {
     width: 80%;
 }
-.join_wrap .zipcode_btn {
+.zipcode_btn {
     width: 18%;
     float: right;
     padding: 10px;
+    border: 1px solid #f52334;
 }
-.join_wrap #address {
+#address {
     margin: 5px 0;
 }
-.join_wrap #birthYear { width: 32%; }
-.join_wrap #birthMonth { width: 32%; }
-.join_wrap #birthDay { width: 32%; }
+#birthYear { width: 32%; }
+#birthMonth { width: 32%; }
+#birthDay { width: 32%; }
 
-.join_wrap .join_btn { text-align: center; }
-.join_wrap .join_btn > button {
+.join_btn { text-align: center; }
+.join_btn > button {
     padding: 15px 60px;
     border-radius: 42px;
     margin: 30px 5px 0;

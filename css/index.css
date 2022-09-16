@@ -198,10 +198,20 @@ font-family: 'Varela Round', sans-serif;
     display: flex;
     text-align: center;
 }
+.article_3.on .news_wrap div { 
+    opacity: 1; 
+    transform: translateY(0);
+}
 .article_3 .news_wrap > div { 
     flex-basis: 100%;
     margin: 2% 1%;
+    opacity: 0;
+    transform: translateY(80%);
 }
+.article_3 .news_wrap > div:first-child { transition: all 0.5s; }
+.article_3 .news_wrap > div:nth-child(2) { transition: all 0.5s 0.2s; }
+.article_3 .news_wrap > div:last-child { transition: all 0.5s 0.4s; }
+
 .article_3 .news_wrap > div h4 {
     font-size: 20px;
     font-weight: bold;

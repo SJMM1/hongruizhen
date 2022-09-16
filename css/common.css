@@ -23,7 +23,7 @@ body{
 }
 .fixed {
     position: fixed !important;  
-    top: -10%;
+    top: 0;
 }
 .absolute {
     position: absolute !important;

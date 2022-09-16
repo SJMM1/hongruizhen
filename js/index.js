@@ -1,30 +1,3 @@
-init();
-$(window).on('resize', function(){
-    init();
-})
-
-// 사이즈 초기화
-function init(){
-    var win_Width = $(window).width(); 
-    if(win_Width > 1024) {
-        $('html').removeClass('mobile').addClass('pc')
-    }
-    else if (win_Width <= 1024) {
-        $('html').removeClass('pc').addClass('mobile')
-    }
-}   
-
-// 스크롤 시 네비게이션 고정
-var nav_offset = $( '#nav' ).offset();
-$( window ).scroll( function() {
-    if ( $( document ).scrollTop() > nav_offset.top ) {
-        $( '#nav' ).addClass( 'scroll_fix' );
-    }
-    else {
-        $( '#nav' ).removeClass( 'scroll_fix' );
-    }
-});
-
 // 호버 시 신메뉴 이미지 변경
 $('.product').mouseover(function() {
     if($('html').hasClass('pc')){
@@ -36,46 +9,6 @@ $('.product').mouseout(function() {
         $(this).attr('src', $(this).attr('src').replace('_back', '_no'));
     }
 });
-
-
-// 네비게이션
-$('.depth_1 > li').mouseenter(function(){
-    if($('html').hasClass('pc')){
-        $(this).children('.depth_2').stop().slideDown();
-    }
-})
-$('.depth_1 > li').mouseleave(function(){
-    if($('html').hasClass('pc')){
-        $(this).children('.depth_2').stop().slideUp(0);
-    }
-})
-
-$('.depth_1 > li').on('click', function(){
-    if($('html').hasClass('mobile')){
-        $(this).children('h2').toggleClass('on');
-        $(this).siblings().find('h2').removeClass('on');
-        $(this).children('.depth_2').stop().slideToggle();
-        $(this).siblings().find('.depth_2').stop().slideUp();
-    }
-}); 
-
-$('#header .open_nav').on('click', function(){
-    $('#nav').toggleClass('on')
-
-    $('.depth_1 > li').siblings().find('h2').removeClass('on');
-    $('.depth_1 > li').siblings().find('.depth_2').stop().slideUp();
-    
-    if($(this).find('i').hasClass('fa-bars')){
-        $(this).find('i').removeClass('fa-bars').addClass('fa-xmark')
-        $('html').css({overflowY:'hidden'})             
-    }
-    else{
-        $(this).find('i').removeClass('fa-xmark').addClass('fa-bars')
-        $('html').css({overflowY:'auto'})
-    } 
-    
-})
-
 
 // 신메뉴 곡선 텍스트
 var circles = document.getElementsByClassName("new_name");           
@@ -94,26 +27,37 @@ new CircleType(circles.item(7)).radius(109);
 // }
 
 
-// 좌측 배너 고정
+
 $(window).scroll(function () {
-    var rightSec = $('.article_1').offset().top;
-    var rightE = rightSec + $('.article_1').height();
+    if($('html').hasClass('pc')){
+        // 좌측 배너 고정
+        var rightSec = $('.article_1').offset().top;
+        var rightE = rightSec + $('.article_1').height();
 
-    var leftBannerH = $(".article_1 .main_banner").height();
-    var sectionBottom = rightE - leftBannerH
+        var leftBannerH = $(".article_1 .main_banner").height();
+        var sectionBottom = rightE - leftBannerH
 
-    var scrollTop = $(window).scrollTop()
-    
-    if (scrollTop >= rightSec && scrollTop <= rightE) {
-        $('.main_banner').addClass('fixed');
-    } else {
-        $('.main_banner').removeClass('fixed');
-    }
-    
-    if( scrollTop >= sectionBottom ) {
-        $('.main_banner').addClass('absolute');
-    } else {
-        $('.main_banner').removeClass('absolute');
+        var scrollTop = $(window).scrollTop()
+
+        if (scrollTop >= rightSec && scrollTop <= rightE) {
+            $('.main_banner').addClass('fixed');
+        } else {
+            $('.main_banner').removeClass('fixed');
+        }
+
+        if( scrollTop >= sectionBottom ) {
+            $('.main_banner').addClass('absolute');
+        } else {
+            $('.main_banner').removeClass('absolute');
+        }
+
+        // 뉴스 효과
+        var news_top = $('.article_3').offset().top - $(window).height()/2;
+        if(scrollTop >= news_top){
+            $('.article_3').addClass('on');
+        } else {
+            $('.article_3').removeClass('on');
+        }
     }
 });
 
@@ -146,9 +90,6 @@ $('.slide-group2').slick({
     ]
 });
 
-// 퀵메뉴
-var quick = parseInt($(".quickmenu").css("bottom"));
-$(window).scroll(function() {
-    var position = $(window).scrollTop();
-    $(".quickmenu").stop().animate({"bottom": -position+quick+"px"},1000);
-});
+
+
+
