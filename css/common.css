@@ -180,6 +180,7 @@ video { max-width: 100%; }
     bottom: 30px;
     right: 25px;
     width: 49px;
+    z-index: 1;
 }
 .quickmenu li:first-child {
     background: #ff0303;
