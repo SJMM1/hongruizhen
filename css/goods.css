@@ -9,39 +9,71 @@
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: multiply;
+    position: relative;
 }
-.article_1 .goods_img { background-image:url('../images/allproduct.jpg'); }
-.article_2 .goods_img { background-image:url('../images/new.jpg'); }
-.article_3 .goods_img { background-image:url('../images/soft.jpg'); }
-.article_4 .goods_img { background-image:url('../images/baked.jpg'); }
-.article_5 .goods_img { background-image:url('../images/fresh.jpg'); }
-.article_6 .goods_img { background-image:url('../images/dessert.jpg'); }
-.article_7 .goods_img { background-image:url('../images/drink.jpg'); }
+.article_1 .goods_img { background-image:url('../images/all1.jpg'); }
+.article_2 .goods_img { background-image:url('../images/new1.jpg'); }
+.article_3 .goods_img { background-image:url('../images/soft1.jpg'); }
+.article_4 .goods_img { background-image:url('../images/fresh1.jpg'); }
+.article_5 .goods_img { background-image:url('../images/baked1.jpg'); }
+.article_6 .goods_img { background-image:url('../images/dessert1.jpg'); }
+.article_7 .goods_img { background-image:url('../images/drink1.jpg'); }
 
 .goods_cate { 
-    text-align: center;
-    transform: translateY(-100%);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .goods_cate ul {
-    display: flex;
+    overflow: hidden;
+    text-align: center;
 }
 .goods_cate li {
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-bottom: none;
+    float: left;
+    width: 14.2857%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
-    flex-basis: auto;
-    flex: 1;
     padding: 20px 0;
     font-weight: bold;
 }
-
 .goods_cate li:hover {
-    border: 2px solid #fff;
-    border-bottom: none;
+    border: 1px solid #fff;
     color: #fff;
 }
 .goods_cate li.on {
     background: #fff;
     color: #000;
 } 
+
+.goods_list ul {
+    overflow: hidden;
+    margin: 100px 0;
+} 
+.goods_list ul li {
+    float: left;
+    width: 23%;
+    margin: 1%;
+    
+    background-size: 0;
+    background-position: center center;
+    transition: all 0.5s;
+} 
+.goods_list ul li:hover {
+    background-size: 25%, 90%;
+    background-repeat: no-repeat;
+    background-position: 90% 10%, center center;
+}
+
+.all_list ul li:hover { background-image: url('../images/circle_icon.png'), url('../images/dot_bg.png'); } 
+.new_list ul li:hover { background-image: url('../images/new.png'), url('../images/dot_bg.png'); } 
+.soft_list ul li:hover { background-image: url('../images/new.png'), url('../images/dot_bg.png'); } 
+.fresh_list ul li:hover { background-image: url('../images/new.png'), url('../images/dot_bg.png'); } 
+.baked_list ul li:hover { background-image: url('../images/new.png'), url('../images/dot_bg.png'); } 
+.dessert_list ul li:hover { background-image: url('../images/new.png'), url('../images/dot_bg.png'); } 
+.drink_list ul li:hover { background-image: url('../images/.png'), url('../images/dot_bg.png'); } 
+
+.goods_list ul li img { transition: all 0.5s; } 
+.goods_list ul li:hover img { transform: rotate(10deg); }
