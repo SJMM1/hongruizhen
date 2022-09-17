@@ -10,10 +10,12 @@ $('.input').on('blur', function(){
 $('.btn').on('click', function(){
     if($('.input-div.one .input').val() == "") {
         alert("아이디를 입력하세요")
-        $('.input-div.one .input').focus() 
+        $('.input-div.one .input').focus()
+        return false 
     }
     else if($('.input-div.pass .input').val() == "") {
         alert("비밀번호를 입력하세요")  
         $('.input-div.pass .input').focus() 
+        return false
     }
 })
