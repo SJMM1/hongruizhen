@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
     <title>홍루이젠</title>
-
+    
     <script src="./js/prefixfree.min.js"></script>
     <script src="./js/circletype.js"></script>
-
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
     <link rel="stylesheet" href="./css/animate.css">
-
+    
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/rwdcommon.css">
-    <link rel="stylesheet" href="./css/login.css">
-    <link rel="stylesheet" href="./css/rwdlogin.css">
+    <link rel="stylesheet" href="./css/goods.css">
+    <link rel="stylesheet" href="./css/rwdgoods.css">
+    
     <!--[if lt IE 9]>
         <script src="./js/html5shiv.js"></script>        
     <![endif]-->
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
     <!------------ HEADER ------------>
@@ -115,34 +119,27 @@
     </nav>
 
     <section id="section">
-        <div class="login_wrap">
-            <div class="sect_img">
-                <img src="./images/frame.png" alt="">
+        <article class="article_7">
+            <div class="goods_img">
+                <div class="goods_cate inner">
+                    <ul>
+                        <li data-tab="all">전체</li>
+                        <li data-tab="new">신메뉴</li>
+                        <li data-tab="soft">소프트샌드위치</li>
+                        <li data-tab="fresh">프레시샌드위치</li>
+                        <li data-tab="baked">갓군샌</li>
+                        <li data-tab="dessert">디저트</li>
+                        <li data-tab="drink" class="on">음료</li>
+                    </ul>
+                </div>
+            </div>       
+            <div class="drink_list goods_list inner">
+                <ul></ul>
             </div>
-            <form onsubmit="return false;"> 
-                <h2>WELCOME</h2>
-                <div class="input-div one">
-                    <div class="i">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="div">
-                        <h5>아이디</h5>
-                        <input type="text" class="input">
-                    </div>
-                </div>
-                <div class="input-div pass">
-                    <div class="i"> 
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="div">
-                        <h5>비밀번호</h5>
-                        <input type="password" class="input">
-                    </div>
-                </div>
-                <a href="#">Forgot Password?</a>
-                <input type="submit" class="btn" value="LOGIN">
-            </form>
-        </div>
+            
+            <script src="./js/goods.js"></script>
+
+        </article>
     </section>
 
     <div class="quickmenu">
@@ -169,8 +166,12 @@
             Copyright (c) HONG RUI CHEN CORP All right reserved.
         </div>
     </footer>
-
     <script src="./js/common.js"></script>
-    <script src="./js/login.js"></script>
+    <script>
+        for(let i=27; i<=60; i++){
+            let goods_list = `<li><img src="../images/menu/${i}.png"></img></li>`
+            $('.drink_list ul').append(goods_list)
+        }
+    </script>
 </body>
 </html>
