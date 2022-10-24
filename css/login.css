@@ -59,7 +59,7 @@ form .input-div.one { margin-top: 0; }
     transition: all 0.5s;
 }
 
-.input-div:before, .input-div:after {
+.input-div:before {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -68,10 +68,7 @@ form .input-div.one { margin-top: 0; }
     background-color: #f52334;
     transition: all 0.5s;
 }
-
-.input-div:before { right: 50%; }
-.input-div:after { left: 50%; }
-.input-div.focus:before, .input-div.focus:after { width: 50%; }
+.input-div.focus:before { width: 100%; }
 
 .input-div.focus > div > h5 {
     top: -5px;
