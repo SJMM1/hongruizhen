@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
     <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/jquery-ui.css">
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
@@ -23,6 +24,7 @@
     <![endif]-->
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
@@ -144,6 +146,7 @@
                 <div class="input_content cf">
                     <input type="text" name="email" id="email">
                     <select name="emailDomain" id="emailDomain">
+                        <option value="">이메일선택</option>
                         <option value="self">직접입력</option>
                         <option value="naver.com">@naver.com</option>
                         <option value="hanmail.net">@hanmail.net</option>
@@ -186,14 +189,19 @@
                 <label for="birthYear"><span>*</span>생일</label>
                 <div class="input_content">
                     <select name="birthYear" id="birthYear">
-                        <option value="0">년</option>
+                        <option value="">년</option>
                     </select>
                     <select name="birthMonth" id="birthMonth">
-                        <option value="0">월</option>
+                        <option value="">월</option>
                     </select>
                     <select name="birthDay" id="birthDay">
-                        <option value="0">일</option>
+                        <option value="">일</option>
                     </select>
+                </div>
+
+                <label for="anniversary">기념일</label>
+                <div class="input_content">
+                    <input type="text" name="anniversary" id="anniversary">
                 </div>
                 
                 <div class="join_btn">
