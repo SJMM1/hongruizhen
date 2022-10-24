@@ -11,7 +11,7 @@ for(var i=1; i<=12; i++) {
 }
 
 $('#birthYear, #birthMonth').on('change', function(){
-    $('#birthDay').empty().append(`<option value="0">일</option>`);
+    $('#birthDay').empty().append(`<option value="">일</option>`);
     
     if($('#birthYear option:selected').val() != 0 && $('#birthMonth option:selected').val() != 0) {
         var selectYear = $('#birthYear option:selected').val()
@@ -92,32 +92,48 @@ $('#memPwRe').on('change', function(){
 
 // 회원가입
 function join() {
-    if($('#memId').val() == ''){
+    if(!$('#memId').val()){
         alert('아이디를 입력하세요.');
         $('#memId').focus();
     }
-    else if($('#memPw').val() == '' || $('#memPwRe').val() == ''){
+    else if(!$('#memPw').val() || !$('#memPwRe').val()){
         alert('비밀번호를 입력하세요.');
-        $('#memPw').val() == '' ? $('#memPw').focus() : $('#memPwRe').focus();      
+        !$('#memPw').val() ? $('#memPw').focus() : $('#memPwRe').focus();      
     }
     else if($('#memPw').parent().find('span').hasClass('pw_msg') || $('#memPwRe').parent().find('span').hasClass('pw_msg')){
         alert('비밀번호를 입력하세요.');
         $('#memPw').parent().find('span').hasClass('pw_msg') ? $('#memPw').focus() : $('#memPwRe').focus()  
     }
-    else if($('#memName').val() == ''){
+    else if(!$('#memName').val()){
         alert('이름을 입력하세요.');
         $('#memName').focus();
     }
-    else if($('#email').val() == ''){
+    else if(!$('#email').val() || !$('#emailDomain').val()){
         alert('이메일을 입력하세요.');
-        $('#email').focus()
+        !$('#email').val() ? $('#email').focus() : $('#emailDomain').focus();    
     }
-    else if($('#birthYear option:selected').val() == 0 || $('#birthMonth option:selected').val() == 0 || $('#birthDay option:selected').val() == 0){
+    else if(!$('#birthYear option:selected').val() || !$('#birthMonth option:selected').val() || !$('#birthDay option:selected').val()){
         alert('생년월일을 입력하세요.');
-        $('#birthYear option:selected').val() == 0 ? $('#birthYear').focus() : $('#birthMonth option:selected').val() == 0 ? $('#birthMonth').focus() : $('#birthDay').focus()
+        !$('#birthYear option:selected').val() ? $('#birthYear').focus() : !$('#birthMonth option:selected').val() ? $('#birthMonth').focus() : $('#birthDay').focus()
     }
     else {
         alert('가입완료!');
         location.href = '../index.html'
     }
 }
+
+
+$("#anniversary").datepicker({
+    changeMonth:true,      // 월 선택
+    changeYear:true,       // 연도 선택
+    yearRange:'1900:2022',  // 연도 범위
+    showAnim:'slideDown',
+    showOtherMonths: true,
+    selectOtherMonths: true,
+    dateFormat:'yy-mm-dd',
+    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    dayNamesMin : ['일', '월', '화', '수', '목', '금', '토'],
+    yearSuffix:' 년',
+    showMonthAfterYear: true,
+    maxDate: "0D"
+});
